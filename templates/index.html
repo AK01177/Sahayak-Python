@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sahayak - AI-powered teaching assistant for multi-grade Indian classrooms. Generate hyper-local content, create differentiated worksheets, and provide instant knowledge support.">
+    <meta name="keywords" content="education, teaching, AI assistant, Indian classrooms, multi-grade, content generation, worksheets, lesson planning">
+    <meta name="author" content="Aryan Ranavat">
+    <title>Sahayak - AI Teaching Assistant for Indian Classrooms</title>
+
+    <!-- Google Fonts: Friendly, rounded -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Fredoka+One&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <meta name="theme-color" content="#6ec6ff">
+</head>
+<body class="school-bg">
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+        <div class="star star-4"></div>
+    </div>
+    <!-- Confetti Container -->
+    <div id="confetti"></div>
+    <!-- Floating Mascot -->
+    <div class="mascot-container">
+        <div class="mascot">
+            <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f989.svg" alt="Owl Mascot" class="mascot-img">
+            <div class="mascot-wave"></div>
+        </div>
+        <div class="mascot-speech-bubble">Hi! I'm Sahayak 🦉<br>Ready to help you learn!</div>
+    </div>
+    <!-- Splash Screen -->
+    <div id="splashScreen" class="splash-screen">
+        <div class="splash-content">
+            <div class="splash-logo">
+                <span class="splash-emoji">📚</span>
+                <h1>Sahayak</h1>
+            </div>
+            <div class="splash-tagline">
+                <p>AI Teaching Assistant for Indian Classrooms</p>
+            </div>
+            <div class="splash-loading">
+                <div class="loading-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <p>Getting your classroom ready...</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="mainApp" style="opacity: 0;">
+        <!-- Header -->
+        <header class="header school-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-emoji">🎒</span>
+                    <h1>Sahayak</h1>
+                </div>
+                <div class="header-info">
+                    <span class="user-name">👋 Welcome, Teacher!</span>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Container -->
+            <div class="chat-container school-chat">
+                <div class="chat-header">
+                    <h2><i class="fas fa-robot"></i> Sahayak AI Teaching Assistant</h2>
+                    <p>Ask me anything about teaching, lesson planning, or classroom management!</p>
+                </div>
+                <!-- Chat Messages -->
+                <div id="chatMessages" class="chat-messages">
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hi! 👋 I'm Sahayak (सहायक), your AI teaching assistant. I can help you with:</p>
+                            <ul>
+                                <li>📚 Fun, local content in Indian languages</li>
+                                <li>📝 Worksheets for every grade</li>
+                                <li>🔍 Quick answers for curious students</li>
+                                <li>🎨 Visual aids & diagrams</li>
+                                <li>📋 Lesson plans & activities</li>
+                            </ul>
+                            <p>What would you like to do today?</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chat Input -->
+                <div class="chat-input-container">
+                    <div class="quick-questions">
+                        <button class="quick-btn" data-question="Create a story about Indian festivals in Hindi">📚 Hindi Story</button>
+                        <button class="quick-btn" data-question="Generate a math worksheet for grade 5">📝 Math Worksheet</button>
+                        <button class="quick-btn" data-question="Explain photosynthesis for grade 7">🔬 Science Help</button>
+                        <button class="quick-btn" data-question="Create a lesson plan for English grammar">📋 Lesson Plan</button>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-container">
+                            <input type="text" id="messageInput" placeholder="Ask me about teaching, lesson planning, or classroom management..." autocomplete="off">
+                            <button id="sendBtn" class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay hidden">
+            <div class="loading-content">
+                <i class="fas fa-brain fa-spin"></i>
+                <p>Processing your teaching request...</p>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript for mascot, confetti, and smooth transitions -->
+    <script>
+        // DOM Elements
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const mascot = document.querySelector('.mascot-img');
+        const mascotSpeech = document.querySelector('.mascot-speech-bubble');
+        const confettiContainer = document.getElementById('confetti');
+        const quickBtns = document.querySelectorAll('.quick-btn');
+
+        // Mascot animation (wave)
+        setInterval(() => {
+            mascot.classList.toggle('wave');
+        }, 3000);
+        mascot.addEventListener('mouseenter', () => {
+            mascotSpeech.style.opacity = 1;
+        });
+        mascot.addEventListener('mouseleave', () => {
+            mascotSpeech.style.opacity = 0.7;
+        });
+
+        // Event Listeners
+        sendBtn.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+        quickBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                messageInput.value = btn.dataset.question;
+                sendMessage();
+            });
+        });
+
+        // Confetti celebration
+        function showConfetti() {
+            confettiContainer.innerHTML = '';
+            for (let i = 0; i < 40; i++) {
+                const conf = document.createElement('div');
+                conf.className = 'confetti';
+                conf.style.left = Math.random() * 100 + 'vw';
+                conf.style.animationDelay = (Math.random() * 2) + 's';
+                confettiContainer.appendChild(conf);
+            }
+            setTimeout(() => { confettiContainer.innerHTML = ''; }, 3000);
+        }
+
+        // Functions
+        async function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message) return;
+            addMessage(message, 'user');
+            messageInput.value = '';
+            showLoading(true);
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', },
+                    body: JSON.stringify({ message: message })
+                });
+                const data = await response.json();
+                if (data.success) {
+                    addMessage(data.response, 'ai');
+                    showConfetti();
+                } else {
+                    addMessage('Sorry, I encountered an error. Please try again.', 'ai', true);
+                }
+            } catch (error) {
+                addMessage('Sorry, I\'m having trouble connecting. Please check your internet and try again.', 'ai', true);
+                console.error('Error:', error);
+            } finally {
+                showLoading(false);
+            }
+        }
+        function addMessage(content, sender, isError = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message ${isError ? 'error' : ''}`;
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.innerHTML = sender === 'user' ? '<i class="fas fa-user-graduate"></i>' : '<i class="fas fa-robot"></i>';
+            const content_div = document.createElement('div');
+            content_div.className = 'message-content';
+            content_div.innerHTML = formatMessage(content);
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content_div);
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        function formatMessage(content) {
+            return content
+                .replace(/\n/g, '<br>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>');
+        }
+        function showLoading(show) {
+            loadingOverlay.classList.toggle('hidden', !show);
+        }
+        // Splash screen animation
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('splashScreen').style.opacity = 0;
+                setTimeout(() => {
+                    document.getElementById('splashScreen').style.display = 'none';
+                    document.getElementById('mainApp').style.opacity = 1;
+                }, 800);
+            }, 1200);
+        });
+    </script>
+</body>
+</html>

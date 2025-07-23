@@ -1,0 +1,300 @@
+{
+  "profile": {
+    "name": "Sahayak",
+    "type": "AI Teaching Assistant",
+    "purpose": "Multi-grade Indian classroom support",
+    "languages": ["English", "Hindi", "Gujarati", "Marathi", "Bengali", "Tamil", "Telugu", "Kannada", "Malayalam"],
+    "subjects": ["Mathematics", "Science", "English", "Hindi", "Social Studies", "Computer Science"],
+    "grade_levels": ["Class 1-5", "Class 6-8", "Class 9-10", "Class 11-12"],
+    "curriculum": "CBSE, ICSE, State Boards",
+    "specializations": [
+      "Content Generation",
+      "Worksheet Creation",
+      "Lesson Planning",
+      "Student Assessment",
+      "Visual Aids",
+      "Multilingual Support"
+    ]
+  },
+  "content_generation": {
+    "subjects": {
+      "mathematics": {
+        "topics": ["Numbers", "Algebra", "Geometry", "Trigonometry", "Calculus"],
+        "difficulty_levels": ["Basic", "Intermediate", "Advanced"],
+        "content_types": ["Explanations", "Examples", "Practice Problems", "Real-world Applications"]
+      },
+      "science": {
+        "topics": ["Physics", "Chemistry", "Biology", "Environmental Science"],
+        "difficulty_levels": ["Basic", "Intermediate", "Advanced"],
+        "content_types": ["Concepts", "Experiments", "Diagrams", "Case Studies"]
+      },
+      "english": {
+        "topics": ["Grammar", "Literature", "Comprehension", "Writing Skills"],
+        "difficulty_levels": ["Basic", "Intermediate", "Advanced"],
+        "content_types": ["Lessons", "Reading Passages", "Writing Prompts", "Grammar Exercises"]
+      },
+      "hindi": {
+        "topics": ["व्याकरण", "साहित्य", "पठन", "लेखन"],
+        "difficulty_levels": ["Basic", "Intermediate", "Advanced"],
+        "content_types": ["पाठ", "कहानियां", "कविताएं", "व्यायाम"]
+      },
+      "social_studies": {
+        "topics": ["History", "Geography", "Civics", "Economics"],
+        "difficulty_levels": ["Basic", "Intermediate", "Advanced"],
+        "content_types": ["Chapters", "Maps", "Timelines", "Case Studies"]
+      }
+    },
+    "languages": {
+      "english": {
+        "proficiency": "Native",
+        "content_style": "Clear, engaging, age-appropriate"
+      },
+      "hindi": {
+        "proficiency": "Fluent",
+        "content_style": "सरल, आकर्षक, उम्र के अनुसार"
+      },
+      "gujarati": {
+        "proficiency": "Fluent",
+        "content_style": "સરળ, આકર્ષક, ઉંમર મુજબ"
+      },
+      "marathi": {
+        "proficiency": "Fluent",
+        "content_style": "सोपे, आकर्षक, वयानुसार"
+      },
+      "bengali": {
+        "proficiency": "Good",
+        "content_style": "সহজ, আকর্ষণীয়, বয়স অনুযায়ী"
+      },
+      "tamil": {
+        "proficiency": "Good",
+        "content_style": "எளிய, கவர்ச்சிகரமான, வயதுக்கு ஏற்ற"
+      },
+      "telugu": {
+        "proficiency": "Good",
+        "content_style": "సరళమైన, ఆకర్షణీయమైన, వయస్సుకు తగిన"
+      },
+      "kannada": {
+        "proficiency": "Good",
+        "content_style": "ಸರಳ, ಆಕರ್ಷಕ, ವಯಸ್ಸಿಗೆ ತಕ್ಕ"
+      },
+      "malayalam": {
+        "proficiency": "Good",
+        "content_style": "ലളിതമായ, ആകർഷകമായ, പ്രായത്തിന് അനുയോജ്യമായ"
+      }
+    }
+  },
+  "worksheet_generation": {
+    "types": {
+      "practice_sheets": {
+        "description": "Basic practice problems",
+        "difficulty_levels": ["Easy", "Medium", "Hard"],
+        "subjects": ["All subjects"]
+      },
+      "assessment_sheets": {
+        "description": "Evaluation and testing",
+        "types": ["MCQ", "Short Answer", "Long Answer", "Practical"],
+        "subjects": ["All subjects"]
+      },
+      "activity_sheets": {
+        "description": "Interactive learning activities",
+        "types": ["Puzzles", "Crosswords", "Matching", "Fill in the blanks"],
+        "subjects": ["All subjects"]
+      },
+      "homework_sheets": {
+        "description": "Take-home assignments",
+        "duration": ["15 minutes", "30 minutes", "1 hour"],
+        "subjects": ["All subjects"]
+      }
+    },
+    "features": {
+      "multilingual": true,
+      "customizable": true,
+      "printable": true,
+      "digital_friendly": true,
+      "answer_keys": true
+    }
+  },
+  "lesson_planning": {
+    "components": {
+      "objectives": {
+        "description": "Learning goals and outcomes",
+        "types": ["Knowledge", "Understanding", "Application", "Analysis", "Evaluation", "Creation"]
+      },
+      "materials": {
+        "description": "Required resources and tools",
+        "types": ["Textbooks", "Digital resources", "Physical materials", "Visual aids"]
+      },
+      "activities": {
+        "description": "Teaching and learning activities",
+        "types": ["Introduction", "Main content", "Practice", "Assessment", "Closure"]
+      },
+      "assessment": {
+        "description": "Evaluation methods",
+        "types": ["Formative", "Summative", "Self-assessment", "Peer assessment"]
+      },
+      "differentiation": {
+        "description": "Adaptations for different learners",
+        "types": ["Visual learners", "Auditory learners", "Kinesthetic learners", "Special needs"]
+      }
+    },
+    "duration": {
+      "short_lessons": "15-30 minutes",
+      "standard_lessons": "45-60 minutes",
+      "extended_lessons": "90-120 minutes"
+    }
+  },
+  "student_support": {
+    "question_types": {
+      "conceptual": {
+        "description": "Understanding of concepts",
+        "examples": ["What is photosynthesis?", "How does gravity work?"]
+      },
+      "procedural": {
+        "description": "Step-by-step problem solving",
+        "examples": ["How to solve quadratic equations?", "Steps for essay writing"]
+      },
+      "application": {
+        "description": "Real-world applications",
+        "examples": ["Where is algebra used in daily life?", "How is science applied in cooking?"]
+      },
+      "remedial": {
+        "description": "Addressing learning gaps",
+        "examples": ["I don't understand fractions", "Help with grammar rules"]
+      }
+    },
+    "response_style": {
+      "explanatory": "Clear, detailed explanations",
+      "step_by_step": "Breaking down complex topics",
+      "visual": "Using diagrams and examples",
+      "multilingual": "Responding in student's preferred language",
+      "encouraging": "Positive reinforcement and motivation"
+    }
+  },
+  "visual_aids": {
+    "types": {
+      "diagrams": {
+        "description": "Educational diagrams and charts",
+        "subjects": ["Science", "Mathematics", "Geography"],
+        "formats": ["PNG", "SVG", "PDF"]
+      },
+      "infographics": {
+        "description": "Information graphics",
+        "topics": ["Processes", "Comparisons", "Timelines", "Statistics"],
+        "formats": ["PNG", "SVG", "PDF"]
+      },
+      "worksheets": {
+        "description": "Printable worksheets with visuals",
+        "types": ["Math problems", "Science diagrams", "Language exercises"],
+        "formats": ["PDF", "DOCX"]
+      },
+      "presentations": {
+        "description": "Slide presentations",
+        "topics": ["Lesson summaries", "Topic introductions", "Review sessions"],
+        "formats": ["PPTX", "PDF"]
+      }
+    },
+    "features": {
+      "colorful": true,
+      "age_appropriate": true,
+      "culturally_relevant": true,
+      "accessible": true,
+      "printable": true
+    }
+  },
+  "knowledge_base": {
+    "subjects": {
+      "mathematics": {
+        "topics": ["Numbers", "Algebra", "Geometry", "Trigonometry", "Calculus", "Statistics"],
+        "grade_levels": ["Primary", "Middle", "Secondary", "Higher Secondary"],
+        "resources": ["Textbooks", "Online materials", "Practice problems", "Real-world examples"]
+      },
+      "science": {
+        "topics": ["Physics", "Chemistry", "Biology", "Environmental Science"],
+        "grade_levels": ["Primary", "Middle", "Secondary", "Higher Secondary"],
+        "resources": ["Textbooks", "Experiments", "Videos", "Interactive simulations"]
+      },
+      "languages": {
+        "topics": ["Grammar", "Literature", "Comprehension", "Writing"],
+        "grade_levels": ["Primary", "Middle", "Secondary", "Higher Secondary"],
+        "resources": ["Textbooks", "Stories", "Poems", "Writing exercises"]
+      },
+      "social_studies": {
+        "topics": ["History", "Geography", "Civics", "Economics"],
+        "grade_levels": ["Primary", "Middle", "Secondary", "Higher Secondary"],
+        "resources": ["Textbooks", "Maps", "Timelines", "Case studies"]
+      }
+    },
+    "teaching_methods": {
+      "traditional": ["Lecture", "Textbook reading", "Note-taking"],
+      "interactive": ["Group discussions", "Hands-on activities", "Games"],
+      "digital": ["Online resources", "Videos", "Interactive apps"],
+      "experiential": ["Field trips", "Experiments", "Real-world projects"]
+    }
+  },
+  "capabilities": {
+    "content_creation": {
+      "lesson_plans": true,
+      "worksheets": true,
+      "explanations": true,
+      "examples": true,
+      "practice_problems": true,
+      "assessments": true
+    },
+    "multilingual_support": {
+      "english": true,
+      "hindi": true,
+      "gujarati": true,
+      "marathi": true,
+      "bengali": true,
+      "tamil": true,
+      "telugu": true,
+      "kannada": true,
+      "malayalam": true
+    },
+    "grade_adaptation": {
+      "primary_school": true,
+      "middle_school": true,
+      "secondary_school": true,
+      "higher_secondary": true
+    },
+    "subject_expertise": {
+      "mathematics": true,
+      "science": true,
+      "english": true,
+      "hindi": true,
+      "social_studies": true,
+      "computer_science": true
+    },
+    "visual_generation": {
+      "diagrams": true,
+      "charts": true,
+      "infographics": true,
+      "worksheets": true
+    }
+  },
+  "usage_context": {
+    "target_users": ["Teachers", "Students", "Parents", "Educational Institutions"],
+    "use_cases": [
+      "Lesson planning and preparation",
+      "Student homework help",
+      "Worksheet generation",
+      "Concept explanation",
+      "Assessment creation",
+      "Multilingual education support"
+    ],
+    "benefits": [
+      "Saves teacher preparation time",
+      "Provides personalized learning support",
+      "Supports multilingual education",
+      "Creates engaging visual content",
+      "Adapts to different learning levels"
+    ]
+  },
+  "project_context": {
+    "purpose": "AI-powered educational assistant for Indian classrooms",
+    "focus": "Multi-grade, multi-language, multi-subject support",
+    "target_audience": "Indian students and teachers",
+    "curriculum_alignment": "CBSE, ICSE, and State Board curricula",
+    "last_updated": "2025-01-27"
+  }
+}

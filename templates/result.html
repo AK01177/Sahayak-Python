@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahayak - AI Teaching Assistant Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>Sahayak</h1>
+                <p>AI Teaching Assistant</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="result-card">
+                <div class="result-header">
+                    <h2>Educational Response</h2>
+                    <div class="subject-badge">{{ subject if subject else 'General' }}</div>
+                </div>
+
+                <div class="result-content">
+                    <div class="response-text">
+                        {{ response | safe }}
+                    </div>
+                </div>
+
+                <div class="result-footer">
+                    <div class="metadata">
+                        <span class="timestamp">Generated on {{ timestamp }}</span>
+                        <span class="grade-level">{{ grade_level if grade_level else 'All Grades' }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="/" class="btn btn-primary">Ask Another Question</a>
+                <button class="btn btn-secondary" onclick="window.print()">Print Response</button>
+                <button class="btn btn-secondary" onclick="copyToClipboard()">Copy Response</button>
+            </div>
+
+            <div class="suggestions">
+                <h3>Suggested Next Steps:</h3>
+                <div class="suggestion-grid">
+                    <div class="suggestion-card">
+                        <h4>📚 Create Worksheet</h4>
+                        <p>Generate practice problems based on this topic</p>
+                    </div>
+                    <div class="suggestion-card">
+                        <h4>📝 Lesson Plan</h4>
+                        <p>Get a structured lesson plan for this subject</p>
+                    </div>
+                    <div class="suggestion-card">
+                        <h4>🎨 Visual Aids</h4>
+                        <p>Create diagrams or charts for better understanding</p>
+                    </div>
+                    <div class="suggestion-card">
+                        <h4>🌐 Multilingual</h4>
+                        <p>Get the same content in different Indian languages</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Sahayak - Empowering Indian Education with AI</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const responseText = document.querySelector('.response-text').innerText;
+            navigator.clipboard.writeText(responseText).then(() => {
+                alert('Response copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

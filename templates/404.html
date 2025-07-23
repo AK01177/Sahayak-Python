@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Sahayak AI Teaching Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin: 1rem 0 2rem 0;
+        }
+
+        .error-description {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .suggestions {
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .suggestions h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .suggestion-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .suggestion-list li {
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+        }
+
+        .suggestion-list li:before {
+            content: "📚 ";
+            margin-right: 0.5rem;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .logo {
+            margin-bottom: 2rem;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .logo p {
+            color: var(--text-muted);
+            margin: 0.5rem 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-container">
+            <div class="logo">
+                <h1>Sahayak</h1>
+                <p>AI Teaching Assistant</p>
+            </div>
+
+            <h1 class="error-code">404</h1>
+            <h2 class="error-message">Page Not Found</h2>
+            <p class="error-description">
+                Oops! It looks like you're trying to access a page that doesn't exist. 
+                Don't worry, let's get you back to learning with Sahayak!
+            </p>
+
+            <div class="suggestions">
+                <h3>What you can do:</h3>
+                <ul class="suggestion-list">
+                    <li>Go back to the main page and ask a question</li>
+                    <li>Try asking about a different subject or topic</li>
+                    <li>Request help with homework or lesson planning</li>
+                    <li>Generate worksheets or visual aids</li>
+                    <li>Get content in different Indian languages</li>
+                </ul>
+            </div>
+
+            <a href="/" class="home-btn">Back to Sahayak</a>
+        </div>
+    </div>
+</body>
+</html>
